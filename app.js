@@ -7,9 +7,7 @@ var oauth = require('oauth');
 var connect = require('connect');
 var mysql = require('mysql');
 var mysqlclient = mysql.createConnection({ database:'meters', user: 'root',  password: 'root'});
-var _twitterConsumerKey = "Wfc3oCpazCL03JmmFpXfQ";
-var _twitterConsumerSecret = "iEMZmmb90PFX1OoTEP4OiMeGx12Tni5jVnPzEwZ0qY";
-
+var secrects= require('./lib/secrets').Secrets;
 function consumer() {
   return new oauth.OAuth(
     "https://twitter.com/oauth/request_token", "https://twitter.com/oauth/access_token", 
@@ -67,8 +65,8 @@ app.get('/sessions/callback', function(req, res){
 
 app.get('/twitcare', ensureTwitterAuthorized, function(req, res){
   var twit = new twitter({
-  consumer_key: _twitterConsumerKey,
-  consumer_secret: _twitterConsumerSecret,
+  consumer_key: secrets._twitterConsumerKey,
+  consumer_secret: secrets._twitterConsumerSecret,
   access_token_key: req.session.oauthAccessToken,
   access_token_secret: req.session.oauthAccessTokenSecret
 });
