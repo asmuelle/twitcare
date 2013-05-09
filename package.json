@@ -1,5 +1,5 @@
 {
-  "name": "kwiqlyinsight",
+  "name": "twitcare",
   "version": "0.0.2",
   "private": true,
   "dependencies": {
@@ -10,6 +10,8 @@
     "mysql":"2.0.0-alpha5",
     "underscore":"1.4.4",
     "node-phantom":"0.2.0",
+    "passport":"0.1.16",
+    "passport-twitter":"0.1.4",
     "dot":"1.0.1",
     "jade": "0.27.7"
   }
