@@ -171,18 +171,26 @@ app.get('/search', function(req, res){
 });
 
 app.get('/follow/:id', function(req,res) {
-
+   getTwitterAPI(req).follow(req.params.id, function(err,data) {
+   res.send(err||data);
+ });
 });
 
 app.get('/unfollow/:id', function(req,res) {
+  getTwitterAPI(req).unfollow(req.params.id, function(err,data) {
+   res.send(err||data);
+ });
 });
 
 app.get('/favourize/:id', function(req,res) {
+ getTwitterAPI(req).favourize(req.params.id, function(err,data) {
+   res.send(err||data);
+ });
 });
 
 app.get('/retweet/:id', function(req,res) {
  getTwitterAPI(req).retweet(req.params.id, function(err,data) {
- 
+   res.send(err||data);
  });
 });
 
@@ -193,9 +201,13 @@ app.get('/retweets/:id', function(req,res) {
 });
 
 app.get('/reply/:id', function(req,res) {
+   res.send("not implemented yet")
 });
 
 app.get('/unfavourize/:id', function(req,res) {
+  getTwitterAPI(req).retweet(req.params.id, function(err,data) {
+   res.send(err||data);
+ });
 });
 
 app.get('/tweet', function(req,res) {
