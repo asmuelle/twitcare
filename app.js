@@ -44,7 +44,9 @@ var findOrCreateUser=function(token,tokenSecret,profile, cb) {
   mysqlclient.query("SELECT * from user where tid=?",[profile.id], function(err,rows) {
     if(rows.length==0) {
       var p=profile._json;
-      mysqlclient.query("INSERT into user (tid, screenname,name,description, url, img_url,lang,location,timezone,utcoffset) values(?,?,?,?,?,?,?,?,?,?)",[p.id,p.username,p.name,p.description,p.url,p.profile_image_url,p.lang,p.location,p.timezone,p.utc_offset],function(err){console.log(err);});
+      mysqlclient.query("INSERT into user (tid, screenname,name,description, url, img_url,lang,location,timezone,utcoffset) values(?,?,?,?,?,?,?,?,?,?)",
+       [p.id,p.username,p.name,p.description,p.url,p.profile_image_url,p.lang,p.location,p.timezone,p.utc_offset],
+       function(err){console.log(err);});
     }
   });
   
