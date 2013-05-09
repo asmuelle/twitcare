@@ -1,0 +1,13 @@
+<div class="modal-header">
+<h3><img src="{{dialog.tweet.user.profile_image_url}}" style="margin-right:25px"/><button class="button btn-success" ng-hide="dialog.tweet.user.following" ng-click="close()">follow</button><button class="button btn-danger" ng-show="dialog.tweet.user.following" ng-click="close()">unfollow</button>
+
+<span ng-bind="dialog.tweet.user.screen_name"></span>(<span ng-bind="dialog.tweet.user.followers_count"></span>:<span ng-bind="dialog.tweet.user.friends_count"></span>)</h3><div ng-bind="dialog.tweet.user.description"/></div>
+</div>
+<div class="modal-body">
+<h3 ng-bind="dialog.tweet.text"/>
+</div>
+<div class="modal-footer">
+<button class="button btn-success" ng-click="close()">reply</button>
+<button class="button btn-primary" ng-click="close()">retweet</button>
+<button class="button btn-ok" ng-click="close()">ok</button>
+</div>

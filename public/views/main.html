@@ -1,0 +1,32 @@
+<div class="main-container">
+  <div class="main wrapper clearfix">
+        <h1><img ng-src="{{model.user.profile_image_url }}" ng-cloak=true"/><span ng-bind="model.user.name"/></h1>
+        <table>
+        <tr><td ng-bind="model.user.followers_count"/><td ng-bind="model.user.friends_count"/>
+       </table>
+ <tabs>
+  <pane heading="Images">
+    <img width="100px" height="75px" ng-repeat="img in media_urls" ng-src="{{img}}"/>
+  </pane>
+
+  <pane heading="Mentioned">
+    <div ng-repeat="(m,x) in mentions">{{m}}: {{x.length}}</div>
+  </pane>
+  <pane heading="Links">
+    <div ng-repeat="(m,x) in urls">{{m}}: {{x.length}}</div>
+  </pane>
+
+  <pane heading="Mentions">
+        <div ng-grid="mentionsGrid" class="gridStyle"></div>
+  </pane>
+  <pane heading="Timeline">
+    <div ng-grid="timelineGrid" class="gridStyle"></div>
+  </pane>
+  <pane heading="Retweets">
+    <div ng-grid="retweetGrid" class="gridStyle"></div>
+  </pane>
+  <pane heading="Search"> 
+    <div ng-grid="searchGrid" class="gridStyle"></div>
+  </pane>
+  </div>
+</div>

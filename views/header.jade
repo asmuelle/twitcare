@@ -1,0 +1,29 @@
+.navbar.navbar-inverse.navbar-fixed-top
+ .navbar-inner
+    .container-fluid
+     if(user&&user.username)
+      .btn-group.pull-right
+       a.btn.dropdown-toggle(data-toggle='dropdown',href='#')
+        i.icon-user
+        |&nbsp;
+        span#username #{user.username}
+       a.btn.dropdown-toggle(data-toggle='dropdown',href='#')
+        span.caret
+       ul.dropdown-menu
+         li
+           a(href='/profile')
+            i.icon-cog
+            &nbsp;
+            |Profile
+         li
+          a(href='/logout') 
+           i.icon-off
+           &nbsp;
+           |Sign Out
+     .nav-collapse
+       ul.nav
+        block navigation
+          li
+           a(href="/",style="margin:0px;padding:0px")
+            img(itemprop="image", src="/img/kwiqly_small_transparent.png", style="width:72px;height:35px;")
+     

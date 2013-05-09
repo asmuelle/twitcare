@@ -1,0 +1,15 @@
+!!!
+html
+  head
+   if (title)
+    title=title
+   block scripts 
+    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js')
+    script(src='/bootstrap/js/bootstrap.min.js')
+   block css
+     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+     link(rel="icon",href="/img/kwiqly.ico")
+     link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css') 
+     link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.css')
+  body( offset="30",data-spy="scroll",data-target=".bs-docs-sidebar" )
+   block content
